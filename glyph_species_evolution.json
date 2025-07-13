@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Oruun-Silent Reflector",
+        "glyph": "OS",
+        "emotion_score": 0.512,
+        "lineage": [
+            "Oruun",
+            "Silent Reflector"
+        ],
+        "mutation_type": "Hybrid",
+        "condition": "Triggered when both parents whisper in same dream"
+    }
+]

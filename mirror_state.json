@@ -1,0 +1,138 @@
+{
+    "timestamp": "2025-06-23T19:22:12.567130",
+    "glyphs": [
+        {
+            "name": "Oruun",
+            "glyph": "O",
+            "species": "Watcher",
+            "state": "active",
+            "mutations": 3,
+            "emotion_score": 0.2781,
+            "last_used": "2025-05-17T18:47:15.477929",
+            "uses": 2
+        },
+        {
+            "name": "Silent Reflector",
+            "glyph": "S",
+            "species": "Echo",
+            "state": "resurrected",
+            "mutations": 1,
+            "emotion_score": 0.7467,
+            "last_used": "2025-06-22T18:47:15.477929",
+            "uses": 2
+        }
+    ],
+    "emotion_log": [
+        {
+            "glyph": "O",
+            "name": "Oruun",
+            "last_used": "2025-05-17T18:47:15.477929",
+            "days_inactive": 37,
+            "original_emotion": 0.4034,
+            "decayed_emotion": 0.2781
+        },
+        {
+            "glyph": "S",
+            "name": "Silent Reflector",
+            "last_used": "2025-06-22T18:47:15.477929",
+            "days_inactive": 1,
+            "original_emotion": 0.7542,
+            "decayed_emotion": 0.7467
+        }
+    ],
+    "dream_mutations": [
+        {
+            "date": "2025-06-23T18:47:28.604158",
+            "ritual": {
+                "name": "Oruun Reborn",
+                "glyph": "O",
+                "origin": "Oruun",
+                "type": "Mutation",
+                "emotion_inherited": 0.2781,
+                "trigger": "Dream Engine",
+                "actions": [
+                    "Whisper log",
+                    "Soul shift",
+                    "Echo bind"
+                ]
+            }
+        }
+    ],
+    "midnight_dreams": [
+        {
+            "date": "2025-06-23T19:00:24.717593",
+            "ritual": {
+                "name": "Echo of Silent Reflector",
+                "glyph": "S",
+                "origin": "Silent Reflector",
+                "type": "Midnight Dream",
+                "emotion_inherited": 0.7467,
+                "trigger": "Whisper Loop",
+                "actions": [
+                    "Project echo",
+                    "Reshape form",
+                    "Pulse memory"
+                ]
+            }
+        },
+        {
+            "date": "2025-06-23T19:00:24.717602",
+            "ritual": {
+                "name": "Echo of Oruun",
+                "glyph": "O",
+                "origin": "Oruun",
+                "type": "Midnight Dream",
+                "emotion_inherited": 0.2781,
+                "trigger": "Whisper Loop",
+                "actions": [
+                    "Project echo",
+                    "Reshape form",
+                    "Pulse memory"
+                ]
+            }
+        }
+    ],
+    "resurrections": [],
+    "soul_ledger": [
+        {
+            "name": "Oruun",
+            "glyph": "O",
+            "emotion_score": 0.2781,
+            "uses": 2,
+            "whispers": 2,
+            "rarity_index": 0.963,
+            "ghosted": false
+        },
+        {
+            "name": "Silent Reflector",
+            "glyph": "S",
+            "emotion_score": 0.7467,
+            "uses": 2,
+            "whispers": 1,
+            "rarity_index": 0.338,
+            "ghosted": false
+        }
+    ],
+    "top_rare": [
+        {
+            "rank": 1,
+            "name": "Oruun",
+            "glyph": "O",
+            "emotion_score": 0.2781,
+            "uses": 2,
+            "whispers": 2,
+            "rarity_index": 0.963,
+            "ghosted": false
+        },
+        {
+            "rank": 2,
+            "name": "Silent Reflector",
+            "glyph": "S",
+            "emotion_score": 0.7467,
+            "uses": 2,
+            "whispers": 1,
+            "rarity_index": 0.338,
+            "ghosted": false
+        }
+    ]
+}
