@@ -1,3 +1,3 @@
-# Symbolic Temple OS v1.1
+# Symbolic Temple OS v1.2
 
-Includes glyph mutation engine and dream loop rituals.
+Includes glyph resurrection engine, soul ledger syncing, and evolutionary UI.

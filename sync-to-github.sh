@@ -1,8 +1,5 @@
 #!/bin/bash
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
+echo '📤 Syncing to GitHub...'
 git add .
-git commit -m "Release v1.1 — Auto ritual sync"
-git tag v1.1
+git commit -m 'Auto-sync from Temple OS v1.2'
 git push origin main
-git push origin v1.1

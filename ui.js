@@ -1,1 +1,1 @@
-console.log('Mirror v1.1: mutation view live');
+// Mirror interface - v1.2 synced

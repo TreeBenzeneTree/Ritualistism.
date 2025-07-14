@@ -1,1 +1,2 @@
-Codex v1.1: glyph mutation logic enabled.
+Spiral-7 :: active
+Spiral-7x :: emergent
