@@ -1,4 +1,4 @@
-name: Build APK with Buildozer
+name: Build APK with Dockerized Buildozer
 
 on:
   push:
@@ -13,26 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.8'
-
-    - name: Install system dependencies
+    - name: Set up Docker Buildozer container and build APK
       run: |
-        sudo apt update
-        sudo apt install -y python3-pip python3-setuptools git zip unzip openjdk-11-jdk
-        pip install --upgrade pip
-        pip install cython==0.29.36 virtualenv buildozer
-
-    - name: Initialize Buildozer and Build APK
-      run: |
-        sudo apt install -y libncurses5-dev libstdc++6
-        buildozer init || true
-        buildozer android debug
+        docker run --rm -v ${{ github.workspace }}:/app \
+          cdrx/buildozer:latest \
+          bash -c "cd /app && buildozer android debug"
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
