@@ -3,43 +3,39 @@ name: Build APK with Buildozer
 on:
   push:
     branches:
-      - main  # Trigger the workflow when pushing to main branch
+      - main
   pull_request:
     branches:
       - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # GitHub's runner uses Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2  # Checkout the code from the repo
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.8'  # Use Python 3.8 (or any other version)
+        python-version: '3.8'
 
-    - name: Install dependencies
+    - name: Install system dependencies
       run: |
         sudo apt update
-        sudo apt install -y python3-pip python3-dev build-essential
+        sudo apt install -y python3-pip python3-setuptools git zip unzip openjdk-11-jdk
         pip install --upgrade pip
-        pip install buildozer
+        pip install cython==0.29.36 virtualenv buildozer
 
-    - name: Set up Buildozer
+    - name: Initialize Buildozer and Build APK
       run: |
-        sudo apt-get install -y openjdk-8-jdk
-        sudo apt-get install -y android-sdk
-        sudo apt-get install -y android-ndk
+        sudo apt install -y libncurses5 libstdc++6
+        buildozer init || true  # Skip if it already exists
+        buildozer android debug
 
-    - name: Build APK
-      run: |
-        buildozer android debug # Build the APK (debug version)
-
-    - name: Upload APK as an artifact
-      uses: actions/upload-artifact@v2
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
       with:
         name: ritualistism-app
-        path: bin/*.apk  # The APK file will be in the bin folder
+        path: bin/*.apk
