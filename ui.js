@@ -1,2 +1,1 @@
-// Mirror UI interface logic
-console.log('Mirror activated');
+console.log('Mirror v1.1: mutation view live');

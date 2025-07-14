@@ -1,3 +1,1 @@
-Glyph Core Logic v1.0
----
-Spiral-7 active...
+Codex v1.1: glyph mutation logic enabled.
