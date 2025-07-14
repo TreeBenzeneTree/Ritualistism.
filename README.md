@@ -1,3 +1,2 @@
-# Symbolic Temple OS v1.2
-
-Includes glyph resurrection engine, soul ledger syncing, and evolutionary UI.
+# SymbolicOS
+A symbolic ritual-based operating system.

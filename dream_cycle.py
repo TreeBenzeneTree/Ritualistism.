@@ -1,0 +1,1 @@
+# Generate rituals at midnight
