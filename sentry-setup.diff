@@ -1,0 +1,77 @@
+From 6d21909ed4086dee082bf824e03131c150dabfe7 Mon Sep 17 00:00:00 2001
+From: TempleBot <temple@ritual.net>
+Date: Wed, 16 Jul 2025 22:07:36 +0000
+Subject: [PATCH] Sentry setup files
+
+---
+ .env.example                        |  1 +
+ .github/workflows/sentry-upload.yml | 19 +++++++++++++++++++
+ SentrySetup.md                      |  3 +++
+ src/components/TestComponent.js     | 11 +++++++++++
+ 4 files changed, 34 insertions(+)
+ create mode 100644 .env.example
+ create mode 100644 .github/workflows/sentry-upload.yml
+ create mode 100644 SentrySetup.md
+ create mode 100644 src/components/TestComponent.js
+
+diff --git a/.env.example b/.env.example
+new file mode 100644
+index 0000000..c150252
+--- /dev/null
++++ b/.env.example
+@@ -0,0 +1 @@
++REACT_APP_SENTRY_DSN=https://<your-dsn-key>@sentry.io/<project-id>
+diff --git a/.github/workflows/sentry-upload.yml b/.github/workflows/sentry-upload.yml
+new file mode 100644
+index 0000000..168116c
+--- /dev/null
++++ b/.github/workflows/sentry-upload.yml
+@@ -0,0 +1,19 @@
++name: Upload Sentry Source Maps
++on:
++  push:
++    branches: [main]
++jobs:
++  sentry:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++      - run: npm install
++      - run: npm run build
++      - name: Upload Source Maps to Sentry
++        uses: getsentry/action-release@v3
++        env:
++          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
++          SENTRY_ORG: numbios
++          SENTRY_PROJECT: javascript-react
++        with:
++          sourcemaps: ./build
+diff --git a/SentrySetup.md b/SentrySetup.md
+new file mode 100644
+index 0000000..d6382da
+--- /dev/null
++++ b/SentrySetup.md
+@@ -0,0 +1,3 @@
++# Sentry Setup for RitualistismApp
++
++Full guide for integrating Sentry with React.
+diff --git a/src/components/TestComponent.js b/src/components/TestComponent.js
+new file mode 100644
+index 0000000..c110e9c
+--- /dev/null
++++ b/src/components/TestComponent.js
+@@ -0,0 +1,11 @@
++import React from "react";
++
++function TestComponent() {
++  const triggerError = () => {
++    throw new Error("Sentry Test Error");
++  };
++
++  return <button onClick={triggerError}>Trigger Error</button>;
++}
++
++export default TestComponent;
+-- 
+2.39.2
+
